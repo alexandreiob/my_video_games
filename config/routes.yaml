@@ -1,0 +1,3 @@
+adminer:
+    path: /adminer
+    controller: App\Controller\AdminerController::index
