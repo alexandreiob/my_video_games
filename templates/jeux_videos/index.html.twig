@@ -3,7 +3,9 @@
 {% block title %}JeuxVideos index{% endblock %}
 
 {% block body %}
-    <h1>JeuxVideos index</h1>
+    <h1>Liste des Jeux Videos</h1>
+
+    <a class="btn btn-primary mt-3 mb-3" href="{{ path('app_jeux_videos_new') }}">Ajouter un jeu vidéo</a>
 
     <table class="table">
         <thead>
@@ -13,7 +15,7 @@
                 <th>Type</th>
                 <th>Released</th>
                 <th>Picture</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -22,11 +24,17 @@
                 <td>{{ jeux_video.id }}</td>
                 <td>{{ jeux_video.name }}</td>
                 <td>{{ jeux_video.type }}</td>
-                <td>{{ jeux_video.released ? jeux_video.released|date('Y-m-d') : '' }}</td>
-                <td>{{ jeux_video.picture }}</td>
+                <td>{{ jeux_video.released ? jeux_video.released|date('Y') : '' }}</td>
                 <td>
-                    <a href="{{ path('app_jeux_videos_show', {'id': jeux_video.id}) }}">show</a>
-                    <a href="{{ path('app_jeux_videos_edit', {'id': jeux_video.id}) }}">edit</a>
+                    {% if jeux_video.picture %}
+                        <img src="{{ jeux_video.picture }}" alt="{{ jeux_video.name }}" width="40">
+                    {% else %}
+                        Aucune image disponible
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="{{ path('app_jeux_videos_show', {'id': jeux_video.id}) }}">voir</a>
+                    <a href="{{ path('app_jeux_videos_edit', {'id': jeux_video.id}) }}">modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -37,5 +45,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_jeux_videos_new') }}">Create new</a>
+    <a class="btn btn-danger mt-3 mb-3" href="{{ path('app_console_index') }}">Liste des Consoles</a>
 {% endblock %}

@@ -3,7 +3,12 @@ adminer:
     path: /adminer
     controller: App\Controller\AdminerController::index
 
-    # routes.yaml
+# Routes for HomeController
+app_home:
+    path: /
+    controller: App\Controller\HomeController::index
+    methods: [GET]
+
 
 # Routes for ConsoleController
 app_console_index:
@@ -32,27 +37,27 @@ app_console_delete:
     methods: [DELETE]
 
 # Routes for JeuxVideosController
-app_jeuxvideos_index:
-    path: /jeux-videos
+app_jeux_videos_index:
+    path: /jeuxvideos
     controller: App\Controller\JeuxVideosController::index
     methods: [GET]
 
-app_jeuxvideos_new:
-    path: /jeux-videos/new
+app_jeux_videos_new:
+    path: /jeuxvideos/new
     controller: App\Controller\JeuxVideosController::new
     methods: [GET, POST]
 
-app_jeuxvideos_edit:
-    path: /jeux-videos/{id}/edit
+app_jeux_videos_edit:
+    path: /jeuxvideos/{id}/edit
     controller: App\Controller\JeuxVideosController::edit
     methods: [GET, POST]
 
-app_jeuxvideos_show:
-    path: /jeux-videos/{id}
+app_jeux_videos_show:
+    path: /jeuxvideos/{id}
     controller: App\Controller\JeuxVideosController::show
     methods: [GET]
 
-app_jeuxvideos_delete:
-    path: /jeux-videos/{id}
+app_jeux_videos_delete:
+    path: /jeuxvideos/{id}
     controller: App\Controller\JeuxVideosController::delete
     methods: [DELETE]

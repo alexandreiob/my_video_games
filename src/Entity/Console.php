@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Entity;
 
 use App\Repository\ConsoleRepository;
@@ -26,14 +27,15 @@ class Console
     private ?\DateTimeInterface $released = null;
 
     #[ORM\OneToMany(mappedBy: 'console', targetEntity: JeuxVideos::class)]
-    private Collection $JeuxVideos;
-
-    #[ORM\OneToMany(mappedBy: 'Console', targetEntity: JeuxVideos::class)]
     private Collection $jeuxVideos;
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 
     public function __construct()
     {
-        $this->JeuxVideos = new ArrayCollection();
         $this->jeuxVideos = new ArrayCollection();
     }
 
@@ -83,13 +85,13 @@ class Console
      */
     public function getJeuxVideos(): Collection
     {
-        return $this->JeuxVideos;
+        return $this->jeuxVideos;
     }
 
     public function addJeuxVideo(JeuxVideos $jeuxVideo): static
     {
-        if (!$this->JeuxVideos->contains($jeuxVideo)) {
-            $this->JeuxVideos->add($jeuxVideo);
+        if (!$this->jeuxVideos->contains($jeuxVideo)) {
+            $this->jeuxVideos->add($jeuxVideo);
             $jeuxVideo->setConsole($this);
         }
 
@@ -98,7 +100,7 @@ class Console
 
     public function removeJeuxVideo(JeuxVideos $jeuxVideo): static
     {
-        if ($this->JeuxVideos->removeElement($jeuxVideo)) {
+        if ($this->jeuxVideos->removeElement($jeuxVideo)) {
             // set the owning side to null (unless already changed)
             if ($jeuxVideo->getConsole() === $this) {
                 $jeuxVideo->setConsole(null);

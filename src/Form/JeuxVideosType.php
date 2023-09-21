@@ -6,6 +6,7 @@ use App\Entity\JeuxVideos;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class JeuxVideosType extends AbstractType
 {
@@ -14,10 +15,12 @@ class JeuxVideosType extends AbstractType
         $builder
             ->add('name')
             ->add('type')
-            ->add('released')
+            ->add('released', DateType::class, [
+                'label' => 'Date de sortie',
+                'years' => range(date('Y') + 2, 1900),
+                ])
             ->add('picture')
             ->add('console')
-            ->add('Console')
         ;
     }
 

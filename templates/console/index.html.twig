@@ -3,7 +3,9 @@
 {% block title %}Console index{% endblock %}
 
 {% block body %}
-    <h1>Console index</h1>
+    <h1>Liste des Consoles</h1>
+
+    <a class="btn btn-primary mt-3 mb-3" href="{{ path('app_jeux_videos_new') }}">Ajouter une console</a>
 
     <table class="table">
         <thead>
@@ -21,10 +23,10 @@
                 <td>{{ console.id }}</td>
                 <td>{{ console.name }}</td>
                 <td>{{ console.brand }}</td>
-                <td>{{ console.released ? console.released|date('Y-m-d') : '' }}</td>
+                <td>{{ console.released ? console.released|date('Y') : '' }}</td>
                 <td>
-                    <a href="{{ path('app_console_show', {'id': console.id}) }}">show</a>
-                    <a href="{{ path('app_console_edit', {'id': console.id}) }}">edit</a>
+                    <a href="{{ path('app_console_show', {'id': console.id}) }}">voir</a>
+                    <a href="{{ path('app_console_edit', {'id': console.id}) }}">modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -35,5 +37,6 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_console_new') }}">Create new</a>
+    <a class="btn btn-danger mt-3 mb-3" href="{{ path('app_jeux_videos_index') }}">Liste des Jeux Vidéos</a>
+
 {% endblock %}

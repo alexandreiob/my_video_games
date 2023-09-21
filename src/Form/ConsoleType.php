@@ -6,6 +6,7 @@ use App\Entity\Console;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class ConsoleType extends AbstractType
 {
@@ -14,7 +15,10 @@ class ConsoleType extends AbstractType
         $builder
             ->add('name')
             ->add('brand')
-            ->add('released')
+            ->add('released', DateType::class, [
+                'label' => 'Date de sortie',
+                'years' => range(date('Y') + 2, 1900),
+                ])
         ;
     }
 

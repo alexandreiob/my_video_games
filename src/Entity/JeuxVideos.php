@@ -26,12 +26,9 @@ class JeuxVideos
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $picture = null;
 
-    #[ORM\ManyToOne(inversedBy: 'JeuxVideos')]
+    #[ORM\ManyToOne(inversedBy: 'jeuxVideos')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Console $console = null;
-
-    #[ORM\ManyToOne(inversedBy: 'jeuxVideos')]
-    private ?Console $Console = null;
 
     public function getId(): ?int
     {
@@ -98,3 +95,4 @@ class JeuxVideos
         return $this;
     }
 }
+
