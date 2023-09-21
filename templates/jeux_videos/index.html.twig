@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}JeuxVideos index{% endblock %}
+
+{% block body %}
+    <h1>JeuxVideos index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Released</th>
+                <th>Picture</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for jeux_video in jeux_videos %}
+            <tr>
+                <td>{{ jeux_video.id }}</td>
+                <td>{{ jeux_video.name }}</td>
+                <td>{{ jeux_video.type }}</td>
+                <td>{{ jeux_video.released ? jeux_video.released|date('Y-m-d') : '' }}</td>
+                <td>{{ jeux_video.picture }}</td>
+                <td>
+                    <a href="{{ path('app_jeux_videos_show', {'id': jeux_video.id}) }}">show</a>
+                    <a href="{{ path('app_jeux_videos_edit', {'id': jeux_video.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_jeux_videos_new') }}">Create new</a>
+{% endblock %}
