@@ -1,13 +1,59 @@
+/* Style du footer */
 .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    text-align: center; /* Centrer horizontalement le contenu du footer */
+    background-color: rgba(255, 255, 255, 0.2); /* Couleur de fond blanche avec 20% d'opacité */
+    height: 50px; /* Hauteur de 50px */
+    width: 100%; /* Largeur de 100% pour occuper toute la largeur de la page */
+    position: fixed; /* Fixer le footer en bas de la fenêtre du navigateur */
+    bottom: 0; /* Aligner le footer en bas de la page */
 }
 
-
-
-
+/* Style du texte dans le footer */
+.footer p {
+    margin: 0; /* Supprimer la marge par défaut du paragraphe */
+    padding: 15px 0; /* Ajouter de la marge intérieure pour centrer verticalement le texte */
+}
 
 .text-container {
     margin-top: 30px; /* Ajustez la valeur de la marge supérieure en fonction de la quantité de décalage souhaitée */
 }
+
+
+h1 {
+    font-size: 50px; /* Ajustez la taille de la police pour votre titre principal (h1) */
+    font-weight: bold; /* Style de police en gras pour le titre principal (h1) */
+    color: #060000; /* Couleur rouge pour le titre principal (h1) */
+}
+
+p {
+    font-size: 18px; /* Ajustez la taille de la police pour les paragraphes (p) */
+    font-style: italic; /* Style de police en italique pour les paragraphes (p) */
+    color: #333; /* Couleur gris foncé pour les paragraphes (p) */
+}
+
+.btn {
+    font-size: 16px; /* Ajustez la taille de la police pour les boutons */
+    background-color: #040000; /* Couleur bleue pour les boutons */
+    color: #f9ed04; /* Couleur du texte des boutons en blanc */
+}
+
+/* Style au survol de la souris */
+.btn:hover {
+    background-color: #ed0e0e; /* Par exemple, changez la couleur en orange */
+    color: #fff; /* Changez la couleur du texte en blanc */
+    /* Autres styles au survol, si nécessaire */
+}
+
+
+.content-container {
+    margin: 40px; /* Ajoute de la marge autour du conteneur */
+    padding: 40px; /* Ajoute de la marge à l'intérieur du conteneur */
+    border: 2px solid #000; /* Ajoute un filet de 2px de large en couleur noire */
+    border-radius: 10px; /* Ajoute des bords arrondis de 10px */
+    display: inline-block; /* Permet au conteneur de s'ajuster à son contenu */
+    background-color: rgba(255, 255, 255, 0.2); /* Couleur blanche avec 20% d'opacité */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Ajoute une ombre légère */
+}
+
+
+

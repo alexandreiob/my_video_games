@@ -4,14 +4,12 @@
 
 {% block body %}
 <body class="bg-image">
-    <div class="text-center text-container">
-        
-            <h1>Bienvenue dans ma chambre</h1>
-            <p>Découvrez mes consoles et jeux vidéo.</p>
-            <a href="{{ path('app_console_index') }}" class="btn btn-primary">Consoles</a>
-            <a href="{{ path('app_jeux_videos_index') }}" class="btn btn-success">Jeux vidéo</a>
-        
-    </div>
+    <div class="content-container">
+    <h1>Bienvenue<br>dans ma chambre</h1>
+    <p>Découvrez mes consoles et jeux vidéo.</p>
+    <a href="{{ path('app_console_index') }}" class="btn">Consoles</a>
+    <a href="{{ path('app_jeux_videos_index') }}" class="btn">Jeux vidéo</a>
+</div>
 
     
     <script src="{{ asset('js/random-background.js') }}"></script>

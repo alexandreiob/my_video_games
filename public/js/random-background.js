@@ -8,6 +8,11 @@ const backgrounds = [
     'background4.avif',
     'background5.avif',
     'background6.avif',
+    'background7.avif',
+    'background8.avif',
+    'background9.avif',
+    'background10.avif',
+    'background11.avif',
     // Ajoutez d'autres noms de fichiers d'arrière-plan au besoin
 ];
 
