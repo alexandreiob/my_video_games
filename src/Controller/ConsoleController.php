@@ -10,15 +10,29 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\JeuxVideosRepository;
+
 
 #[Route('/console')]
 class ConsoleController extends AbstractController
 {
     #[Route('/', name: 'app_console_index', methods: ['GET'])]
-    public function index(ConsoleRepository $consoleRepository): Response
+    public function index(ConsoleRepository $consoleRepository, JeuxVideosRepository $jeuxVideosRepository): Response
     {
+        $consoles = $consoleRepository->findAll();
+
+        // Créez un tableau pour stocker le nombre de jeux par console
+        $jeuxCounts = [];
+    
+        foreach ($consoles as $console) {
+            // Utilisez la méthode du repository des jeux pour obtenir le nombre de jeux pour chaque console
+            $jeuxCount = $jeuxVideosRepository->countByConsole($console);
+            $jeuxCounts[$console->getId()] = $jeuxCount;
+        }
+    
         return $this->render('console/index.html.twig', [
-            'consoles' => $consoleRepository->findAll(),
+            'consoles' => $consoles,
+            'jeuxCounts' => $jeuxCounts, // Passez le tableau au modèle Twig
         ]);
     }
 

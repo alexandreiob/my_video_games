@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\JeuxVideos;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use App\Entity\Console;
 
 /**
  * @extends ServiceEntityRepository<JeuxVideos>
@@ -45,4 +46,15 @@ class JeuxVideosRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+public function countByConsole(Console $console): int
+{
+    return $this->createQueryBuilder('j')
+        ->select('COUNT(j.id)')
+        ->andWhere('j.console = :console')
+        ->setParameter('console', $console)
+        ->getQuery()
+        ->getSingleScalarResult();
+}
+
 }

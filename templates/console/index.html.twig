@@ -16,6 +16,7 @@
                 <th>Name</th>
                 <th>Brand</th>
                 <th>Released</th>
+                <th>Games</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -26,6 +27,7 @@
                 <td>{{ console.name }}</td>
                 <td>{{ console.brand }}</td>
                 <td>{{ console.released ? console.released|date('Y') : '' }}</td>
+                <td>{{ jeuxCounts[console.id] }}</td> <!-- Affiche le nombre de jeux associés à la console -->
                 <td>
                     <a href="{{ path('app_console_show', {'id': console.id}) }}">voir</a>
                     <a href="{{ path('app_console_edit', {'id': console.id}) }}">modifier</a>

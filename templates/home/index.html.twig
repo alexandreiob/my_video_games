@@ -3,12 +3,18 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="text-center">
-        <div class="jumbotron">
+<body class="bg-image">
+    <div class="text-center text-container">
+        
             <h1>Bienvenue dans ma chambre</h1>
             <p>Découvrez mes consoles et jeux vidéo.</p>
             <a href="{{ path('app_console_index') }}" class="btn btn-primary">Consoles</a>
             <a href="{{ path('app_jeux_videos_index') }}" class="btn btn-success">Jeux vidéo</a>
-        </div>
+        
     </div>
+
+    
+    <script src="{{ asset('js/random-background.js') }}"></script>
+
+</body>
 {% endblock %}

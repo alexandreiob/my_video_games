@@ -3,3 +3,11 @@
     bottom: 0;
     width: 100%;
 }
+
+
+
+
+
+.text-container {
+    margin-top: 30px; /* Ajustez la valeur de la marge supérieure en fonction de la quantité de décalage souhaitée */
+}
