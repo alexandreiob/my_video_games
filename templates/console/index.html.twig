@@ -3,9 +3,11 @@
 {% block title %}Console index{% endblock %}
 
 {% block body %}
-    <h1>Liste des Consoles</h1>
 
-    <a class="btn btn-primary mt-3 mb-3" href="{{ path('app_jeux_videos_new') }}">Ajouter une console</a>
+    <div class="text-center">
+        <h1>Consoles</h1>
+        <a class="btn btn-primary mt-3 mb-3" href="{{ path('app_console_new') }}">Ajouter une console</a>
+    </div>
 
     <table class="table">
         <thead>
@@ -36,7 +38,7 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a class="btn btn-danger mt-3 mb-3" href="{{ path('app_jeux_videos_index') }}">Liste des Jeux Vidéos</a>
-
+    <div class="text-center">
+        <a class="btn btn-danger mt-3 mb-3" href="{{ path('app_jeux_videos_index') }}">Liste des Jeux Vidéos</a>
+    </div>
 {% endblock %}

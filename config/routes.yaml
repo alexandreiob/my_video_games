@@ -34,7 +34,7 @@ app_console_show:
 app_console_delete:
     path: /console/{id}
     controller: App\Controller\ConsoleController::delete
-    methods: [DELETE]
+    methods: [POST]
 
 # Routes for JeuxVideosController
 app_jeux_videos_index:
@@ -60,4 +60,4 @@ app_jeux_videos_show:
 app_jeux_videos_delete:
     path: /jeuxvideos/{id}
     controller: App\Controller\JeuxVideosController::delete
-    methods: [DELETE]
+    methods: [POST]

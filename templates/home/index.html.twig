@@ -3,10 +3,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="jumbotron">
-        <h1>Bienvenue dans ma chambre</h1>
-        <p>Découvrez mes consoles et jeux vidéo.</p>
-        <a href="{{ path('app_console_index') }}" class="btn btn-primary">Voir les consoles</a>
-        <a href="{{ path('app_jeux_videos_index') }}" class="btn btn-success">Voir les jeux vidéo</a>
+    <div class="text-center">
+        <div class="jumbotron">
+            <h1>Bienvenue dans ma chambre</h1>
+            <p>Découvrez mes consoles et jeux vidéo.</p>
+            <a href="{{ path('app_console_index') }}" class="btn btn-primary">Consoles</a>
+            <a href="{{ path('app_jeux_videos_index') }}" class="btn btn-success">Jeux vidéo</a>
+        </div>
     </div>
 {% endblock %}
