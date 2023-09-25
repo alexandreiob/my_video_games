@@ -6,8 +6,9 @@
     width: 100%; /* Largeur de 100% pour occuper toute la largeur de la page */
     position: fixed; /* Fixer le footer en bas de la fenêtre du navigateur */
     bottom: 0; /* Aligner le footer en bas de la page */
-    left : 0;
+    left: 0;
 }
+
 
 /* Style du texte dans le footer */
 .footer p {
@@ -61,6 +62,7 @@ p {
 .alternate-row tr:nth-child(even) {
     background-color: #f2f2f2;
 }
+
 
 
 

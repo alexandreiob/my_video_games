@@ -32,7 +32,7 @@ class JeuxVideosType extends AbstractType
             ],
         ])
         ->add('type', TextType::class, [
-            'label' => 'Plateforme',
+            'label' => 'Type',
             'attr' => [
                 'placeholder' => 'ex. Plateforme',
                 'class' => 'form-control', // Ajoutez ici les classes Bootstrap
@@ -50,7 +50,6 @@ class JeuxVideosType extends AbstractType
             ],
             'constraints' => [
                 new NotBlank(),
-                new Date(),
             ],
         ])
         ->add('picture', TextType::class, [

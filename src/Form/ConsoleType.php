@@ -47,7 +47,6 @@ class ConsoleType extends AbstractType
             ],
             'constraints' => [
                 new NotBlank(),
-                new Date(),
             ],
         ]);
 }
