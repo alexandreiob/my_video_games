@@ -3,13 +3,27 @@
 {% block title %}JeuxVideos index{% endblock %}
 
 {% block body %}
+
+
+
+<div class="container pt-5">
+
+    <div class="row mb-2">
+
+        <div class="col">
+
+         <!-- Ajoutez cette partie pour l'icône de lien vers la page d'accueil -->
+       
+            <a href="{{ path('app_home') }}" class="navbar-brand">
+                <i class="fas fa-gamepad fa-2x" title="Retour sur la home"></i>
+            </a>
     
     <div class="text-center">
         <h1>Jeux Videos</h1>
         <a class="btn btn-primary mt-3 mb-3" href="{{ path('app_jeux_videos_new') }}">Ajouter un jeu vidéo</a>
     </div>
 
-    <table class="table">
+    <table class="table alternate-row">
         <thead>
             <tr>
                 <th>Id</th>
@@ -51,4 +65,10 @@
     <div class="text-center">
         <a class="btn btn-danger mt-3 mb-3" href="{{ path('app_console_index') }}">Liste des Consoles</a>
     </div>
+
+     </div>
+
+    </div>
+
+</div>
 {% endblock %}

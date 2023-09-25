@@ -1,11 +1,34 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Console{% endblock %}
+{% block title %}Ajoutez une console{% endblock %}
 
 {% block body %}
-    <h1>Create new Console</h1>
+
+
+
+<div class="container pt-5">
+
+    <div class="row mb-2">
+
+        <div class="col">
+
+         <!-- Ajoutez cette partie pour l'icône de lien vers la page d'accueil -->
+       
+            <a href="{{ path('app_home') }}" class="navbar-brand">
+                <i class="fas fa-gamepad fa-2x" title="Retour sur la home"></i>
+            </a>
+
+    <h1>Ajout d'une console</h1>
 
     {{ include('console/_form.html.twig') }}
 
+    <div class="col text-right">
     <a href="{{ path('app_console_index') }}">back to list</a>
+    </div>
+
+       </div>
+
+    </div>
+
+</div>
 {% endblock %}

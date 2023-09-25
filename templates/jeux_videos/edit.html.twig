@@ -1,13 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit JeuxVideos{% endblock %}
+{% block title %}Modification Jeux Vidéo{% endblock %}
 
 {% block body %}
-    <h1>Edit JeuxVideos</h1>
+
+
+<div class="container pt-5">
+
+    <div class="row mb-2">
+
+        <div class="col">
+
+         <!-- Ajoutez cette partie pour l'icône de lien vers la page d'accueil -->
+       
+            <a href="{{ path('app_home') }}" class="navbar-brand">
+                <i class="fas fa-gamepad fa-2x" title="Retour sur la home"></i>
+            </a>
+
+    <h1>Modifiez un jeu vidéo</h1>
 
     {{ include('jeux_videos/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('app_jeux_videos_index') }}">back to list</a>
+    <div class="d-flex justify-content-between"> <!-- Utilisation de classes Flexbox -->
+
+    <a href="{{ path('app_jeux_videos_index') }}"class="btn btn-secondary mt-2">Back to list</a>
 
     {{ include('jeux_videos/_delete_form.html.twig') }}
+
+    </div>
+
+        </div>
+
+    </div>
+
+</div>
+
 {% endblock %}
